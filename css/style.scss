@@ -10,44 +10,72 @@
 .red{background-color: red !important}
 
 
-#hd{
-  top:0; left:0; border-bottom: black 1px solid;
-  width:100%; z-index:1000;
-  background-color: rgba(255,255,255,.5);
+#hd{ margin: 15px;
   .container{
+    position: relative;
     h1{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      max-width:150px;
+      width: 25%;
       a{
-        display:block;
         img{
-            display:block; width:150px;
+            width:100%
           }
-      }
-    }
-  }
-}
+       }
+     }
+   }
+ }
 
-nav#gnb{
-  text-align: center; margin: 0; padding: 0;
+#gnb{
   ul{
+    text-align: center;
     li{
       display: inline-block; vertical-align: middle;
-      padding: 0 5px;
+      padding: 0 15px;
       a{
-        color:black; font-size: 1.2em;line-height: 38px;
+        display: block; color:black;
+        font-size: 1.2em; line-height: 2;
       }
     }
   }
 }
 
-// ul#sns{
-//        display: block;
+#gnb li:after{
+  content:""; display: block; margin: 0 auto;
+  width: 0; height: 3px; background:#FF075D;
+  transition: 0.5s;}
+#gnb li:hover a{color:#FF075D;}
+#gnb li:hover:after{width:100%}
+
+// #gnb>ul>li:nth-child(3):before{float:right; width: 5px;  height: 5px; background: #FF075D; border-radius: 50%;}
+// #gnb>ul>li>a{ display:block; clear:both}
+.on-air{float:right; width: 5px;  height: 5px;
+        background: #FF075D; border-radius: 50%;}
+
+// #gnb .d2{
+//   width:100%; top:calc(100% + 38px); left: 0; padding: 0 15px;
+//   height: 0; transition: 0.5s; overflow: hidden;
+//   background-color: rgba(255, 255, 255, 0.75);
+//   &:before{content: ""; display: block; height: 20px}
 //   li{
-//     display: inline-block; vertical-align: middle;
-//     a{
-//       color: black; line-height:38px; font-size: 0.95em;
-//       i{
-//
-//       }
+//     a{ font-size: 0.9em; line-height: 1.5; color: #222;
 //     }
 //   }
 // }
+
+ul#sns{
+  position: absolute; right: 0; top:0;
+  li{
+    display: inline-block; vertical-align: middle;
+    padding: 0 5px;
+    a{
+      color: black; line-height:2; font-size: 0.95em;
+      i{
+
+      }
+    }
+  }
+}
